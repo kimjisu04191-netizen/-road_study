@@ -280,7 +280,9 @@ function tQ(idx){
 }
 function mD(){
   const ct=document.getElementById("ct");const st=ct?ct.scrollTop:0;
-  const d=D[S.d];S.pr["d"+d.day+"-"+S.t]=true;sv();R();
+  const d=D[S.d];const key="d"+d.day+"-"+S.t;
+  if(S.pr[key])delete S.pr[key];else S.pr[key]=true;
+  sv();R();
   setTimeout(()=>{const ct2=document.getElementById("ct");if(ct2)ct2.scrollTop=st;},0);
 }
 function pD(){if(S.d>0)goStudy(S.d-1);}
